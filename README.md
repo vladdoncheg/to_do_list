@@ -1,24 +1,44 @@
-# README
+# To Do List
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+App uses Ruby on Rails, React.js and Bootstrap.
 
-Things you may want to cover:
+## Run locally
 
-* Ruby version
+0. Ensure You have installed:
 
-* System dependencies
+* Ruby (with [rvm](https://rvm.io/) for example)
+* [Node.js](https://nodejs.org/en/download/)
+* [Yarn](https://classic.yarnpkg.com/en/docs/install/)
+* [PostgreSQL](https://www.postgresql.org/download/)
 
-* Configuration
+1. Install bundler:
 
-* Database creation
+    ```bash
+    gem install bundler
+    ```
 
-* Database initialization
+2. Install ruby dependencies:
 
-* How to run the test suite
+    ```bash
+    bundle install
+    ```
 
-* Services (job queues, cache servers, search engines, etc.)
+3. Install js dependencies:
 
-* Deployment instructions
+    ```bash
+    yarn install
+    ```
 
-* ...
+4. Prepare the database:
+
+    ```bash
+    bundle exec rails db:create
+    bundle exec rails db:migrate
+    bundle exec rails db:seed
+    ```
+
+5. Run the application:
+
+    ```bash
+    bundle exec rails server
+    ```
