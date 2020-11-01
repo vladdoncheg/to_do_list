@@ -24,8 +24,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Tasks from '../components/Tasks';
 
 document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <Tasks />,
-    document.body.appendChild(document.createElement('div')),
-  )
+  const rootNode = document.getElementById('root');
+
+  ReactDOM.render(<Tasks />, rootNode)
 });
