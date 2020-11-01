@@ -146,13 +146,13 @@ class Task extends React.Component {
     const date = new Date(task.created_at);
     const dateWithLocale = date.toLocaleString('ru-RU');
 
-    let inputClass = "card mb-4";
-    inputClass += task.completed ? " border-width-1px" : " border-width-3px";
+    let taskCardClasses = "card mb-4";
+    taskCardClasses += task.completed ? " border-width-1" : " border-width-3";
 
     return (
       <div className="row d-flex align-items-center justify-content-center">
         <div className="col-md-10 col-sm-12 col-lg-8">
-          <div className={inputClass}>
+          <div className={taskCardClasses}>
             <div className="task">
               <div className="task-start">
                 <input

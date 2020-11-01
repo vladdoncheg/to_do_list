@@ -14,11 +14,11 @@
  *= require_self
  */
 
-.border-width-1 {
+.card.border-width-1 {
   border-width: 1px;
 }
 
-.border-width-3 {
+.card.border-width-3 {
   border-width: 3px;
 }
 
