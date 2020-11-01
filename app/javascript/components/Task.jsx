@@ -157,6 +157,7 @@ class Task extends React.Component {
               <div className="task-start">
                 <input
                   type="checkbox"
+                  className="task-completed"
                   checked={task.completed}
                   onChange={this.editCompleted}
                 />

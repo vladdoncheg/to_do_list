@@ -58,6 +58,10 @@
   white-space: nowrap;
 }
 
+.task-completed:hover {
+  cursor: pointer;
+}
+
 .invalid-input {
   color: red;
   font-size: 11px;
