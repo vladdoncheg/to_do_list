@@ -1,4 +1,7 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faPencilAlt } from '@fortawesome/free-solid-svg-icons/faPencilAlt'
 
 class Task extends React.Component {
   constructor(props) {
@@ -146,13 +149,10 @@ class Task extends React.Component {
     const date = new Date(task.created_at);
     const dateWithLocale = date.toLocaleString('ru-RU');
 
-    let taskCardClasses = "card mb-4";
-    taskCardClasses += task.completed ? " border-width-1" : " border-width-3";
-
     return (
-      <div className="row d-flex align-items-center justify-content-center">
-        <div className="col-md-10 col-sm-12 col-lg-8">
-          <div className={taskCardClasses}>
+      <div className='list-item'>
+        <li>
+          <div className="card mb-4">
             <div className="task">
               <div className="task-start">
                 <input
@@ -169,18 +169,24 @@ class Task extends React.Component {
                 <div className="task-date">
                   {dateWithLocale}
                 </div>
-                <div className="btn-group-vertical padding-left-10">
-                  <button type="button" className="btn btn-sm btn-outline-secondary" onClick={this.startContentEditing}>
-                    Edit
+                <div className="buttons are-small is-flex-direction-column pl-3">
+                  <button className="button is-warning m-0 width-100" onClick={this.startContentEditing}>
+                    <span>Edit</span>
+                    <span className="icon is-small">
+                      <FontAwesomeIcon icon={faPencilAlt} />
+                    </span>
                   </button>
-                  <button type="button" className="btn btn-sm btn-outline-danger" onClick={this.deleteTask}>
-                    Delete
+                  <button className="button is-danger" onClick={this.deleteTask}>
+                    <span>Delete</span>
+                    <span className="icon is-small">
+                      <FontAwesomeIcon icon={faTimes} />
+                    </span>
                   </button>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </li>
       </div>
     );
   };

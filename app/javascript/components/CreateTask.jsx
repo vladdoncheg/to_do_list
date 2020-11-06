@@ -19,9 +19,9 @@ class CreateTask extends React.Component {
   };
 
   validateForm = (event) => {
-    const form = document.getElementById('createForm');
+    const input = document.getElementById('taskContent');
 
-    if (!form.checkValidity()) {
+    if (input.value == "") {
       event.preventDefault();
       event.stopPropagation();
 
@@ -83,34 +83,37 @@ class CreateTask extends React.Component {
     const inputBorderColor = this.state.show ? 'red' : '#ced4da'
 
     return (
-      <div className="container mt-5 mb-5">
-        <div className="row">
-          <div className="col-sm-12 offset-md-2 col-md-8 col-lg-6 offset-lg-3">
-            <form id="createForm" onSubmit={this.addTask} noValidate>
-              <div className="d-flex align-items-center justify-content-center">
-                <input
-                  type="text"
-                  name="content"
-                  id="taskContent"
-                  className="form-control"
-                  required
-                  style={{ borderColor: inputBorderColor }}
-                  placeholder="Reply to the e-mail"
-                  onChange={this.updateValue}
-                />
-                <button type="submit" className="btn btn-outline-success margin-left-5">
-                  Create
-                </button>
+      <section className="hero border-bottom-1">
+        <div className="container">
+          <form id="createForm" onSubmit={this.addTask} noValidate>
+            <div className="field py-6">
+              <div className="is-flex">
+                <div className="control">
+                  <input
+                    className="input"
+                    type="text"
+                    name="content"
+                    id="taskContent"
+                    style={{ borderColor: inputBorderColor }}
+                    required
+                    placeholder="Reply to the e-mail"
+                    onChange={this.updateValue}
+                  />
+                </div>
+                <div className="control pl-1">
+                  <button type="submit" className="button is-success">
+                    Create
+                  </button>
+                </div>
               </div>
               { this.state.show &&
-                <div className="invalid-input">
-                  You can't create task with empty name
-                </div>
-              }
-            </form>
-          </div>
+                <p className="help is-danger">
+                  Task content can't be empty
+                </p>}
+            </div>
+          </form>
         </div>
-      </div>
+      </section>
     );
   };
 };

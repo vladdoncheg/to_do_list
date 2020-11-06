@@ -74,45 +74,56 @@ class Tasks extends React.Component {
   render() {
     const { tasks } = this.state;
 
-    const allTasks = tasks.map((task) => (
-      <Task
-        key={task.id}
-        task={task}
-        deleteTaskFromList={this.deleteTaskFromList}
-        updateTask={this.updateTask}
-        resortTaskList={this.resortTaskList}
-      />
-    ));
+    const allTasks = (
+      <div className='list'>
+        <ul>
+          {tasks.map((task) => (
+            <Task
+              key={task.id}
+              task={task}
+              deleteTaskFromList={this.deleteTaskFromList}
+              updateTask={this.updateTask}
+              resortTaskList={this.resortTaskList}
+            />
+          ))}
+        </ul>
+      </div>
+    );
 
     const noTasks = (
-      <div className="vw-100 vh-50 d-flex align-items-center justify-content-center">
-        <h4>
+      <div className="container has-text-centered">
+        <h2 className="subtitle">
           No tasks yet. Why not create one?
-        </h4>
+        </h2>
       </div>
     );
 
     return (
       <>
-        <section className="jumbotron jumbotron-fluid text-center">
-          <div className="container">
-            <h1 className="display-4">
-              The best task manager ever!
-            </h1>
-            <p className="lead text-muted">
-              Just type a goal and track it
-            </p>
+        <section className="hero is-light">
+          <div className="hero-body">
+            <div className="container has-text-centered">
+              <h1 className="title">
+                The best task manager ever!
+              </h1>
+              <h2 className="subtitle">
+                Just type a goal and track it
+              </h2>
+            </div>
           </div>
         </section>
-        <CreateTask
-          appendTaskToList={this.appendTaskToList}
-        />
-        <hr></hr>
-        <div className="py-5">
-          <main className="container">
-            {tasks.length > 0 ? allTasks : noTasks}
-          </main>
-        </div>
+        <CreateTask appendTaskToList={this.appendTaskToList} />
+        <section>
+          <div className="hero-body">
+            <div className="container">
+              <div className="columns is-centered">
+                <div className='column is-two-thirds'>
+                  {tasks.length > 0 ? allTasks : noTasks}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </>
     );
   };

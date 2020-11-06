@@ -16,11 +16,8 @@ require("channels")
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import $ from 'jquery';
-import Popper from 'popper.js';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Tasks from '../components/Tasks';
+import 'bulma/css/bulma.css'
 
 document.addEventListener('DOMContentLoaded', () => {
   const rootNode = document.getElementById('root');

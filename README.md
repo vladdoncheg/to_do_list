@@ -1,6 +1,6 @@
 # To Do List
 
-App uses Ruby on Rails, React.js and Bootstrap.
+App uses Ruby on Rails, React.js and Bulma.
 
 ## Run locally
 
